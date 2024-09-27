@@ -12,4 +12,10 @@ class ACowoModel extends Model
     protected $table = 'klasemen_acowo';
     protected $primaryKey = 'id';
     protected $fillable = ["gol", "kelases_id"];
+
+
+public function kelases()
+{
+    return $this->belongsTo(KelasModel::class, 'kelas_id');
+}
 }

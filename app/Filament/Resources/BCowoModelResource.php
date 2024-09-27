@@ -23,6 +23,19 @@ class BCowoModelResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('gol')
+                    ->numeric(),    
+                Forms\Components\Select::make('kelas_id')
+                    ->relationship(name: 'kelases', titleAttribute: 'kelas')
+                    ->searchable(['kelas', 'id'])
+                    ->required(),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
                 Tables\Columns\TextColumn::make('gol')
                     ->sortable(['gol']),
                 Tables\Columns\TextColumn::make('kelases.kelas'),
@@ -40,6 +53,7 @@ class BCowoModelResource extends Resource
                 ]),
             ]);
     }
+
 
     public static function getRelations(): array
     {
