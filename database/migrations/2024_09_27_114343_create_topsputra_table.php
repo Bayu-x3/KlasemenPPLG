@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kelases', function (Blueprint $table) {
+        Schema::create('topsputra', function (Blueprint $table) {
             $table->id();
-            $table->enum("kelas", ["X RPL 1", "X RPL 2", "XI RPL 1", "XI RPL 2", "XII RPL 1", "XII RPL 2"]);
+            $table->string("name");
+            $table->integer("gol");
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kelases');
+        Schema::dropIfExists('topsputra');
     }
 };
