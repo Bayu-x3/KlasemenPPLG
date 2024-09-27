@@ -36,9 +36,9 @@ class KlasemenACeweResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('gol')
-                    ->sortable(['gol']),
                 Tables\Columns\TextColumn::make('kelases.kelas'),
+                Tables\Columns\TextColumn::make('gol')
+                ->sortable(['gol']),
                 
             ])
             ->filters([

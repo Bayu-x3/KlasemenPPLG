@@ -43,9 +43,9 @@ public static function table(Table $table): Table
 {
     return $table
         ->columns([
+            Tables\Columns\TextColumn::make('kelases.kelas'),
             Tables\Columns\TextColumn::make('gol')
                 ->sortable(['gol']),
-            Tables\Columns\TextColumn::make('kelases.kelas'),
             
         ])
         ->filters([
